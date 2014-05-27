@@ -3,7 +3,7 @@ public class DataTypes {
     /* Primitive DataTypes and Variables */
 
     /*Lesson 1: String */
-    public static lesson_one(){
+    public static void lesson_one(){
         /* initialize strings and compare them */
         String x = 'Hello World!';
         String y = 'HELLO WORLD!';
@@ -31,7 +31,7 @@ public class DataTypes {
     }
 
     /* Lesson 2: Boolean and Conditional Statements */
-    public static lesson_two(){
+    public static void lesson_two(){
         /* initialize a boolean */
         Boolean bool = True;
 
@@ -76,7 +76,7 @@ public class DataTypes {
     }
 
     /* Lesson 3: Time, Date, and Datetime */
-    public static lesson_three(){
+    public static void lesson_three(){
         /* Initialize Dates, Times, and DateTimes */
 
         /* Date new instance */
@@ -136,7 +136,7 @@ public class DataTypes {
     }
 
     /* Lesson 4: Integer, Long, Double and Decimal */
-    public static lesson_four(){
+    public static void lesson_four(){
         /* create instances of each type of mumeric data type */
         Integer i = 5;
         Long l = 2147483648L;
