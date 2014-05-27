@@ -100,12 +100,38 @@ public class DataTypes {
         DateTime from_d_midnight = DateTime.newInstance(1960, 2, 17);
 
         /* init with date and time integers */
-        DateTime from_int = DateTime.newInstance(1960, 2, 17, 18, 30, 2, 20);
+        DateTime from_int = datetime.newInstance(1960, 2, 17, 18, 30, 2);
 
         system.debug('From date time ' + from_dt);
         system.debug('From date at midnight ' + from_d_midnight);
         system.debug('From int ' + from_int);
-        system.debug(from_dt == from_int);
         
+        /* DateTime comparison */
+        /* is same day also method on Date class */
+        /* https://www.salesforce.com/us/developer/docs/apexcode/Content/apex_methods_system_datetime.htm#apex_System_Datetime_isSameDay */
+        system.debug(from_dt.isSameDay(from_int));
+
+        /* Adding days to a date */
+        /* Common use case, when would you want to do this? */
+        /* Approach applies to datetime and date */
+
+        /* Get today's date - for a datetime the equivilant would be Datetime.now() */
+        Date today = Date.today();
+
+        /* Set the date to be 30 days out */
+        Date my_new_date = today.addDays(30);
+        system.debug(my_new_date);
+
+        /* Other useful date and date time examples */
+
+        /*Date arithmetic */
+        /* http://www.salesforce.com/us/developer/docs/apexcode/Content/apex_methods_system_date.htm#apex_System_Date_daysBetween */
+        Integer days_between = today.daysBetween(my_new_date);
+        system.debug('Days between ' + days_between); 
+
+        /* Get a date at the first of the month of the supplied date */
+        /* http://www.salesforce.com/us/developer/docs/apexcode/Content/apex_methods_system_date.htm#apex_System_Date_toStartOfMonth */
+        Date month_first = today.toStartOfMonth();
+        system.debug(month_first);
     }
 }
