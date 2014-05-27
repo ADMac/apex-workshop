@@ -75,4 +75,37 @@ public class DataTypes {
         system.debug(bob_str);
     }
 
+    /* Lesson 3: Time, Date, and Datetime */
+    public static lesson_three(){
+        /* Initialize Dates, Times, and DateTimes */
+
+        /* Date new instance */
+        /* http://www.salesforce.com/us/developer/docs/apexcode/Content/apex_methods_system_date.htm#apex_System_Date_newInstance */
+        Date new_date = Date.newInstance(1960, 2, 17);
+        system.debug('New date ' + new_date);
+
+        /* Time new instance */
+        /* http://www.salesforce.com/us/developer/docs/apexcode/Content/apex_methods_system_time.htm#apex_System_Time_newInstance */
+        Time new_time = Time.newInstance(18, 30, 2, 20);
+        system.debug('New time ' + new_time);
+
+        /* DateTime new instance */
+        /* notice that there are several different versions of the new instance method */
+        /* https://www.salesforce.com/us/developer/docs/apexcode/Content/apex_methods_system_datetime.htm#apex_System_Datetime_newInstance_2 */
+       
+        /* init from a date and a time */
+        DateTime from_dt = DateTime.newInstance(new_date, new_time);
+
+        /* init at midnight from date integers */
+        DateTime from_d_midnight = DateTime.newInstance(1960, 2, 17);
+
+        /* init with date and time integers */
+        DateTime from_int = DateTime.newInstance(1960, 2, 17, 18, 30, 2, 20);
+
+        system.debug('From date time ' + from_dt);
+        system.debug('From date at midnight ' + from_d_midnight);
+        system.debug('From int ' + from_int);
+        system.debug(from_dt == from_int);
+        
+    }
 }
