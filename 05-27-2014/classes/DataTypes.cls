@@ -134,4 +134,72 @@ public class DataTypes {
         Date month_first = today.toStartOfMonth();
         system.debug(month_first);
     }
+
+    /* Lesson 4: Integer, Long, Double and Decimal */
+    public static lesson_four(){
+        /* create instances of each type of mumeric data type */
+        Integer i = 5;
+        Long l = 2147483648L;
+        Double d = 3.14159;
+        Decimal dec = 19.23;
+
+        /* arithmetic operators */
+        /* https://www.salesforce.com/us/developer/docs/apexcode/Content/langCon_apex_expressions_operators_understanding.htm */
+        /* addition, subtraction, mult, div */
+        system.debug('Addition ' + (i + i));
+        system.debug('Subtration ' + (i - i));
+        system.debug('Multiplication ' + (i * i));
+        system.debug('Division ' + (i / i));
+
+        /* math with different types */
+        system.debug('Integer plus double ' + (i + d));
+        system.debug('Integer times double ' + (i * d)); /* notice the types of the products */
+        system.debug('Decimal times double' + (d * dec));
+        system.debug('Integer divided by decimal ' + (i/dec)); /* notice the type of the quotient */
+
+        /* Important math exception to know */
+        try{
+            system.debug(10/0);
+        }
+        catch(MathException ex){
+            system.debug(ex);
+        }
+        
+        /* conversion */
+
+        String str = '10';
+        /* String to integer */
+        Integer str_to_int = Integer.valueOf(str);
+
+        /* Integer to double */ 
+        Double int_to_dbl = Double.valueOf(str_to_int);
+
+        /* Double to decimal */
+        Decimal dbl_to_dec = Decimal.valueOf(int_to_dbl);
+
+        /* and back to a string */
+        String dbl_to_str = String.valueOf(dbl_to_dec);
+
+        /* notice the value */
+        system.debug(dbl_to_str);
+        /* notice the result of comparing it to our original string though */
+        system.debug(str == dbl_to_str);
+
+        /* Decimal Instance methods */
+        /* http://www.salesforce.com/us/developer/docs/apexcode/Content/apex_methods_system_decimal.htm */
+
+        /* rounding */ 
+        /* ROUNDING MODE MATTERS - notice different modes of rounding and resulting values */
+        system.debug('Ceiling ' + dec.round(RoundingMode.CEILING));
+        system.debug('Down ' + dec.round(RoundingMode.DOWN));
+        system.debug('Floor ' + dec.round(RoundingMode.FLOOR));
+        system.debug('Half down ' + dec.round(RoundingMode.HALF_DOWN));
+        system.debug('Half even ' + dec.round(RoundingMode.HALF_EVEN));
+        system.debug('Half up ' + dec.round(RoundingMode.UP));
+
+        /* set scale */
+        /* http://www.salesforce.com/us/developer/docs/apexcode/Content/apex_methods_system_decimal.htm#apex_System_Decimal_scale */
+        system.debug('Scaled decimal up ' + dec.setScale(4));
+        system.debug('Scaled decimal down ' + dec.setScale(1, RoundingMode.HALF_UP)); /* remember scaling down will force the decimal to be rounded and follow rounding rules */
+    }
 }
