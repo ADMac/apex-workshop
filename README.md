@@ -1,6 +1,8 @@
 apex-workshop
 =============
 http://www.meetup.com/NYC-Salesforce-Developer-Group/
+
+<br/>
 Code samples from the apex-workshop meetup group part of the NYC Salesforce dev user group http://www.meetup.com/NYC-Salesforce-Developer-Group/
 
 Structure
