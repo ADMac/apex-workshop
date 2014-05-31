@@ -44,7 +44,7 @@ public class DataTypes {
         /* logical inequality */
         Boolean yz_comp = (y == z);
         /* multiple condition logic expression */
-        Boolean yz_and_comp = (y == 'HELLO WORLD!' && z == 'HELLO');
+        Boolean yz_and_comp = (True ==  (z == 'HELLO'));
         system.debug('Logical equality ' + y_comp);
         system.debug('Logical inequality ' + yz_comp);
         system.debug('Multiple conditions ' + yz_and_comp);
