@@ -26,8 +26,21 @@ public class Tutorial6 {
         system.debug('No longer empty list ' + empty_list);
 
         //added by index
-        empty_list[1] = 'c';
-        system.debug('One added ' + empty_list);
+        List<String> fixed_length = new List<2>();
+        fixed_length[1] = 'c';
+        system.debug('One added ' + fixed_length);
+        system.debug('index 0 is ' + fixed_length[0]);
+        system.debug('index 0 is ' + fixed_length[1]);
+
+        //get the length of the list
+        //list_name.size"();
+        system.debug(fixed_length.size());
+        //remember index 0 
+        try{
+            fixed_length[fixed_length.size()];
+        }catch(Exception e){
+            system.debug(e);
+        }
     }
 
     public static void lesson_three_sets() {
